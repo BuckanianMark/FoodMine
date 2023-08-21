@@ -1,0 +1,22 @@
+.container{
+    position: relative;
+}
+.favourite{ 
+    position: absolute;
+    color: #e72929;
+    top: 0.5rem;
+    right: 1rem;
+    margin-right: 40px;
+    margin-top: 30px;
+    font-size: 1.2rem;
+
+}
+.favourite.not{
+    color: #777;
+}
+button{
+    opacity: 0.9;
+}
+button:hover{
+    opacity: 1;
+}

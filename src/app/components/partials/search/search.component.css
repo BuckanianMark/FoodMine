@@ -1,0 +1,25 @@
+input{
+    border-radius: 10rem 0 0 10rem;
+    border: none;
+    background: #f1f1f1;
+    height: 3rem;
+    width: 20rem;
+    font-weight: 500;
+    padding-left: 20px;
+    font-size: 1.1rem;
+
+}
+button{
+    color: white;
+    height: 3rem;
+    width: 5rem;
+    border-radius:0 10rem 10rem 0;
+    background-color: #e72929;
+    border: none;
+    opacity: 0.8;
+    outline: none;
+}
+button:hover{
+    opacity: 1;
+    cursor: pointer;
+}

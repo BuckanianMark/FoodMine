@@ -1,0 +1,8 @@
+<div class="flex justify-center mt-3 mb-5">
+    <input type="text" #s 
+    placeholder="Search food...." 
+    (keyup.enter)="search(s.value)" 
+    [value]="searchTerm"
+    class="input">
+    <button (click)="search(s.value)" class="">Search</button>
+</div>
