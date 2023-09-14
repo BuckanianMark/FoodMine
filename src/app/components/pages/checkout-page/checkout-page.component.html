@@ -1,0 +1,60 @@
+<div id="container">
+    <div>
+        <app-title title="Order Form" fontSize="1.6rem"></app-title>
+        <div class="w-[100%] md:flex">
+        <form 
+        [formGroup]="checkoutForm"
+        class="border p-8 rounded-lg border-slate-300 mx-3 mb-4 md:w-[50%]">
+
+            <div class="flex justify-between mx-4 mb-4 flex-col ">
+                <label> Name</label>
+                <input
+                 type="text"
+                 placeholder="Your name .."
+                 formControlName="name"
+                 class="outline-none w-[80%] bg-slate-300 rounded p-1"
+                >
+            </div>
+            <div class="error-list" *ngIf="fc['name'].errors">
+                <div *ngIf="fc['name'].errors['required']">*Should not be empty</div>
+        
+            </div> 
+
+            <div class="flex justify-between flex-col mx-4 mb-4">
+                <label> Address</label>
+                <input
+                 type="text"
+                 placeholder="Your address..."
+                 formControlName="address"
+                 class="outline-none w-[80%] bg-slate-300 rounded p-1"
+                >
+            </div>
+            <div class="error-list" *ngIf="fc['address'].errors">
+                <div *ngIf="fc['address'].errors['required']">*Should not be empty</div>
+        
+            </div> 
+
+        </form>
+
+        <div id="map" class="md:w-[50%]">
+            <app-title 
+            fontSize="1.6rem"
+            title="Choose your Adress on the Map"
+            ></app-title>
+            <map [order]="order"></map>
+        </div>
+
+    </div>
+        <order-item-list [order]="order"></order-item-list>
+        <div class="btn-container" class="flex justify-center">
+            <div class="btn">
+                <button 
+                (click)="createOrder()" 
+                class="hover:cursor-pointer shadow shadow-gray-400 hover:opacity-[1] bg-red-500 w-[100%] h-[3rem] px-6 mt-2 opacity-[0.9] text-white rounded-md ">
+                    Go to Payments
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>

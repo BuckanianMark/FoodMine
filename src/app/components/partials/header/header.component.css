@@ -29,3 +29,10 @@ a{
     min-width: 8rem;
     padding-top: 2px;
 }
+#menu a:hover{
+    background:#e72929;
+    opacity: 1;
+    color: #fff;
+    
+
+}

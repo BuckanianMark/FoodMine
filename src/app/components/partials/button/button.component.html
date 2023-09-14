@@ -1,0 +1,15 @@
+<div class="container">
+    <button
+    class="text-white bg-red-500 text-[1.3rem] w-[12rem] rounded hover:opacity-70"
+    [type]="type"
+    (click)="onClick.emit()"
+    >
+    {{ text }}
+    </button>
+</div>
+  <!-- [ngStyle]="{
+        color:color,
+        'background-color':bgColor,
+        'font-size.rem':fontSizeRem,
+        'width.rem':widthRem
+    }" -->

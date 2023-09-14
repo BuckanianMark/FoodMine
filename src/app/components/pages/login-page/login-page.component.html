@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="details">
+        <app-title title="Login" class="uppercase"></app-title>
+    <form 
+    [formGroup]="loginForm" 
+    (ngSubmit)="onSubmit()" id="form" 
+    class="border p-8 rounded-lg border-slate-300">
+
+        <div id="input-container">
+        <div class="flex justify-between mx-4 mb-4">
+        <label>Email</label>
+        <input class="outline-none w-[80%] bg-slate-300 rounded p-1" 
+        type="text" placeholder="Enter Email.." 
+        formControlName="email">
+       </div>
+        <div class="error-list" *ngIf="fc['email'].errors && isSubmitted">
+            <div *ngIf="fc['email'].errors['required']">*Should not be empty</div>
+            <div *ngIf="fc['email'].errors['email']">*Provide a valid email address</div>
+        </div>
+    </div>
+
+    <div id="input-container">
+        <div class="flex justify-between mx-4 mb-4">
+
+        <label>Password</label>
+        <input 
+        type="password" 
+        placeholder="Password...."  
+        formControlName="password" 
+        class="outline-none w-[80%] bg-slate-300 rounded p-1">
+      </div>
+        <div class="error-list" *ngIf="fc['password'].errors && isSubmitted">
+            <div *ngIf="fc['password'].errors['required']">*Should not be empty</div>
+    
+        </div> 
+    </div> 
+
+
+        <!-- <input-validation
+        [control]="fc['email']"
+        [showErrors]="isSubmitted">
+    </input-validation> -->      
+<!-- <text-input
+        [control]="fc['email']"
+        [showErrors]="isSubmitted"
+        type="email"
+        label="Email"
+        >
+
+        </text-input> -->
+
+        <!-- <text-input
+        [control]="fc['password']"
+        [showErrors]="isSubmitted"
+        type="password"
+        label="Password"
+        >
+
+        </text-input> -->
+
+
+    
+        <!-- 
+        <input-validation
+        [control]="fc['email']"
+        [showErrors]="isSubmitted">
+    </input-validation>
+    
+    </input-conatiner> -->
+           
+        
+               <default-button text="Login" class="text-center mb-2"></default-button>
+                <div class="register text-center">
+                    New user? &nbsp;
+                    <a routerLink="/Register" [queryParams]="{returnUrl:returnUrl}" class=" mt-2 border-b-[1px] border-gray-500">
+                        Register Here
+                    </a>
+                </div>
+               <!-- <div class="button">
+                    <button type="submit" class="bg-red-500 px-4 py-1 rounded text-white opacity-100 hover:opacity-70">Submit</button>
+                </div> -->
+    </form>
+</div>
+</div>

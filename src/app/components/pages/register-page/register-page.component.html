@@ -1,0 +1,93 @@
+<div>
+
+    <app-title title="Register" class="md:ml-6 uppercase"></app-title>
+    <div class="flex justify-center border border-gray-300 md:mx-20 rounded-lg md:py-6 shadow shadow-gray-300">
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="flex justify-start flex-col items-start text-center ">
+        <h1 class="text-center md:text-2xl capitalize font-semibold text-gray-800 border-b-2 border-gray-500">Fill the credentials below</h1>
+        <div class="fgroup">
+        <label>Name</label>
+        <input 
+        id="input"
+        type="text"
+        placeholder="Enter Name.." 
+        formControlName="name"
+        >
+    </div>
+    <div class="error-list" *ngIf="fc['name'].errors && isSubmitted">
+        <div *ngIf="fc['name'].errors['required']">*Should not be empty</div>
+        <div *ngIf="fc['name'].errors['minLength']">*Name is too short</div>
+    </div> 
+
+    <div class="fgroup">
+        <label>Email</label>
+        <input 
+        type="email"
+        placeholder="Enter Email.." 
+        formControlName="email"
+        >
+    </div>
+    <div class="error-list" *ngIf="fc['email'].errors && isSubmitted">
+        <div *ngIf="fc['email'].errors['required']">*Should not be empty</div>
+        <div *ngIf="fc['email'].errors['email']">*Provide a valid email address</div>
+    </div>
+
+    <div class="fgroup">
+
+        <label>password</label>
+        <input 
+        type="password"
+        placeholder="Enter a password.." 
+        formControlName="password"
+        >
+</div>
+<div class="error-list" *ngIf="fc['password'].errors && isSubmitted">
+    <div *ngIf="fc['password'].errors['required']">*Should not be empty</div>
+    <div *ngIf="fc['password'].errors['minLength']">*Provide a longer password</div>
+
+</div> 
+
+<div class="fgroup">
+
+        <label>Confirm password</label>
+        <input 
+        type="password"
+        placeholder="Confirm your password.." 
+        formControlName="confirmPassword"
+        >
+    </div>
+    <div class="error-list" *ngIf="fc['confirmPassword'].errors && isSubmitted">
+        <div *ngIf="fc['confirmPassword'].errors['required']">*Should not be empty</div>
+        <div *ngIf="fc['confirmPassword'].errors['notMatch']">*Confirmpassword should match with password </div>
+
+    </div> 
+
+    <div class="fgroup">
+
+    
+        <label>Address</label>
+        <input 
+        type="text"
+        placeholder="Enter Address.." 
+        formControlName="address"
+        >
+    </div>
+    <div class="error-list" *ngIf="fc['address'].errors && isSubmitted">
+        <div *ngIf="fc['address'].errors['required']">*Should not be empty</div>
+        <div *ngIf="fc['address'].errors['minLength']">*Adress is too short</div>
+
+    </div> 
+
+<button type="submit" (click)="onSubmit()">Reg</button>
+    <default-button text="Register" ></default-button>
+      <div class="login">
+
+        Already a user? &nbsp;
+        <a routerLink="/login" [queryParams]="{returnUrl:returnUrl}" class=" mt-2 border-b-[1px] border-gray-500">
+            Login Here
+        </a>
+      </div>
+      
+    </form>
+</div>
+</div>

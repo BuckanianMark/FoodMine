@@ -1,4 +1,9 @@
-<div class="mt-8 container flex justify-center items-center flex-wrap m-4">
+<app-not-found
+ [visible]="!food"
+ notfoundMessage="Food not Found ...!"
+ resetlinkText="Back To Homepage"
+ ></app-not-found>
+<div *ngIf="food" class="mt-8 container flex justify-center items-center flex-wrap m-4">
     <img [src]="food.imageUrl" [alt]="food.Foodname" class=" rounded w-[400px]">
 
     <div class="details md:ml-8 "> 
@@ -27,7 +32,7 @@
         <div><span class="font-bold text-[#777] text-2xl">{{food.price | currency}}</span></div>
         
 
-        <button class="bg-red-400 text-white md:px-4 py-2 mt-2 rounded-md">Add To Cart</button>
+        <button class="bg-red-400 text-white md:px-4 py-2 mt-2 rounded-md" (click)="addToCart()">Add To Cart</button>
 
     </div>
 </div>

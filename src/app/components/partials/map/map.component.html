@@ -1,0 +1,9 @@
+<div class="container relative w-100%">
+    <button id="find" 
+    *ngIf="!readonly"
+    class=" my-2 px-1 rounded opacity-[0.9] text-gray-900 hover:opacity-[1]"
+    (click)="findMylocation()">Find my location</button>
+    <div #map class="map md:min-w-[200px] md:h-[200px] mx-4" >
+        
+    </div>
+</div>

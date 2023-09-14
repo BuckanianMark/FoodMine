@@ -1,0 +1,43 @@
+<div id="container">
+    <div>
+        <app-title title="Order Summary" class="font-bold" fontSize="1.6rem"></app-title>
+
+        <div class="w-[100%] md:flex md:mx-10">
+        <div id="summary" class="md:w-[50%]">
+         <div class="my-2">
+            <h2 class="mb-2 capitalize">Your order Credentials</h2>
+            <hr class="md:min-w-[200px]  md:max-w-[300px]">
+            <h3 class="text-gray-500 font-bold md:text-xl">Name:</h3>
+            <span class="text-gray-700 font-semibold">{{ order.name}}</span>
+         </div>
+         <div>
+            <h3 class="text-gray-500 font-bold md:text-xl">Address:</h3>
+            <span class="text-gray-700 font-semibold">{{ order.adress}}</span>
+         </div>
+        </div>
+
+        <div class="md:w-[50%] md:h-[50%] md:mx-2">
+
+            <div >
+            <app-title
+            title="Shipping Address"
+            fontSize="1.6rem">
+            </app-title>
+            <map [order]="order" [readonly]="true"></map>
+        </div>
+        </div>
+
+    </div>
+        <order-item-list [order]="order"></order-item-list>
+        <div class="btn-container" class="flex justify-center">
+           
+        </div>
+    </div>
+
+    <div class="payment-buttons flex items-center justify-center">
+        <paypal-button [order]="order">
+             
+        </paypal-button>
+    </div>
+</div>
+
