@@ -1,10 +1,19 @@
-# FoodMine
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
+# FoodMine is a food delivery application
+#Stacks
+Frontend Stacks
+-Tailwindcss
+-Angular CLI version 16
+-Typescript
+Backend  Stacks
+-NodeJs
+-Typescript
+-MongoDb
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server of the client side application. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run npm start for the backened
+#Will provide an view of how the application looks like
 
 ## Code scaffolding
 
@@ -14,9 +23,6 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Running end-to-end tests
 
